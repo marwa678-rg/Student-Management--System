@@ -50,6 +50,10 @@ export class ProfileService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} profile`;
+    return this.profileRepo.restore(id);
   }
+restore(id:number){
+  return this.profileRepo.restore(id);
+}
+
 }

@@ -6,8 +6,10 @@ export class CreateStudentDto {
   @MinLength(3)
   name: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @IsEmail()
-  email: string;
+@IsString()
+@IsEmail()
+@IsNotEmpty()
+email:string;
+
+
 }

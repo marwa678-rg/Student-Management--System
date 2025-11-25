@@ -12,6 +12,7 @@ export class StudentService {
   ) {}
 
   create(createStudentDto: CreateStudentDto) {
+    //build
     const student = this.studentRepo.create(createStudentDto);
     // Create Profile
 
@@ -43,6 +44,7 @@ export class StudentService {
   }
 
   restore(id: number) {
+   
     return this.studentRepo.restore(id);
   }
 }

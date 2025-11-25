@@ -3,6 +3,7 @@ import { Student } from 'src/student/entities/student.entity';
 import { Teacher } from 'src/teacher/entities/teacher.entity';
 import {
   Column,
+  DeleteDateColumn,
   Entity,
   ManyToMany,
   ManyToOne,
@@ -36,4 +37,6 @@ export class Course {
 
   //   @ManyToMany(() => Student, (student) => student.courses)
   //   students: Student[];
+@DeleteDateColumn()
+  deleteAt:Date;
 }

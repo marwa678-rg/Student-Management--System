@@ -27,8 +27,8 @@ export class Student {
   @Column({ nullable: false })
   name: string;
 
-  @Column({ nullable: false, unique: true })
-  email: string;
+@Column({nullable:false})
+  email:string;
 
   // 1 : 1
   @OneToOne(() => Profile, (profile) => profile.student)

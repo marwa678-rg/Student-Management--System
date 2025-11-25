@@ -75,6 +75,11 @@ export class EnrollmentService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} enrollment`;
+    return this.enrollmentRepo.softDelete(id);
   }
+
+restore(id:number){
+  return this.enrollmentRepo.restore(id);
+}
+
 }

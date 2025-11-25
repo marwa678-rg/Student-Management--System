@@ -29,6 +29,10 @@ export class EnrollmentController {
   findOne(@Param('id') id: string) {
     return this.enrollmentService.findOne(+id);
   }
+  @Patch(':id/restore')
+  restore(@Param('id') id:string){
+    return this.enrollmentService.restore(+id);
+  }
 
   @Patch(':id')
   update(

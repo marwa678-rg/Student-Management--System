@@ -79,6 +79,10 @@ export class CourseService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} course`;
+    return this.courseRepo.softDelete(id);
+  }
+
+  restore(id:number){
+    return this.courseRepo.restore(id)
   }
 }

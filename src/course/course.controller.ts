@@ -35,6 +35,11 @@ export class CourseController {
     return this.courseService.findOne(+id);
   }
 
+  @Patch(':id/restore')
+  restore(@Param('id') id:string){
+    return this.courseService.restore(+id)
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
     return this.courseService.update(+id, updateCourseDto);
@@ -44,4 +49,5 @@ export class CourseController {
   remove(@Param('id') id: string) {
     return this.courseService.remove(+id);
   }
+
 }

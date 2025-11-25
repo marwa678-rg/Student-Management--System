@@ -1,6 +1,7 @@
 import { Student } from 'src/student/entities/student.entity';
 import {
   Column,
+  DeleteDateColumn,
   Entity,
   Index,
   OneToOne,
@@ -23,4 +24,7 @@ export class Profile {
   // 1 : 1
   @OneToOne(() => Student, (student) => student.profile)
   student: Student;
+
+@DeleteDateColumn()
+  deleteAt:Date;
 }

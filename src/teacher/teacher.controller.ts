@@ -35,7 +35,11 @@ export class TeacherController {
     // Graph QL
     return this.teacherService.findOne(+id).then((teacher) => teacher.courses);
   }
-
+  @Patch(':id/restore' )
+  restore(@Param('id') id:string){
+return this.teacherService.restore(+id)
+  }
+  
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTeacherDto: UpdateTeacherDto) {
     return this.teacherService.update(+id, updateTeacherDto);

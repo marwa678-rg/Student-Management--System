@@ -47,4 +47,9 @@ export class ProfileController {
   remove(@Param('id') id: string) {
     return this.profileService.remove(+id);
   }
+@Patch(':id/restore')
+restore(@Param('id') id:string){
+return this.profileService.restore(+id)
+}
+
 }

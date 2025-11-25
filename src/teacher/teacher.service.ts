@@ -42,8 +42,12 @@ export class TeacherService {
     return this.teacherRepo.save(teacher);
   }
 
+  restore(id:number){
+    return this.teacherRepo.restore(id);
+  }
+
   remove(id: number) {
-    return `This action removes a #${id} teacher`;
+    return this.teacherRepo.softDelete(id);
   }
 
   async removeCourseFromTeacher(teacherId: number, courseId: number) {
@@ -60,7 +64,7 @@ export class TeacherService {
     // Course inside DB
     const course = await this.courseRepo.findOne({ where: { id: courseId } });
     if (!course) throw new NotFoundException('Course Not Found!');
-
+//check in teacher courses
     const existingCourse = teacher.courses.find(
       (course) => course.id == courseId,
     );
